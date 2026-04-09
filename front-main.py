@@ -7,7 +7,7 @@
 # --- Imports ---
 # LangChain components for LLM interaction and prompt management
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 
 # Streamlit for the web UI, os for environment variable management
 import streamlit as st
@@ -29,7 +29,7 @@ tweet_prompt = PromptTemplate(template = tweet_template, input_variables = ['num
 # --- Model Initialization ---
 # Initialize Google's Gemini 1.5 Flash model via LangChain's
 # ChatGoogleGenerativeAI wrapper. Flash is optimized for speed and efficiency.
-gemini_model = ChatGoogleGenerativeAI(model = "gemini-1.5-flash-latest")
+gemini_model = ChatGoogleGenerativeAI(model = "gemini-2.5-flash")
 
 # --- LangChain Pipeline ---
 # Chain the prompt template and model together using LangChain's pipe operator.
